@@ -5,6 +5,8 @@ import Features from './components/Features';
 import Footer from './components/Footer';
 import { ArrowRight } from 'lucide-react';
 
+export const ctaLink = "https://lucasrubix.samcart.com/referral/crashcourse/n27HmdOg7ekPOQww";
+
 const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -16,7 +18,7 @@ const App: React.FC = () => {
             <span>YieldStack</span>
           </div>
           <a 
-            href="https://cryptolabsresearch.com/cryptocrashcourse"
+            href={ctaLink}
             className="hidden md:inline-flex items-center text-sm font-semibold text-brand-accent hover:text-emerald-300 transition-colors"
           >
             Member Login <ArrowRight size={16} className="ml-1" />
@@ -25,7 +27,7 @@ const App: React.FC = () => {
       </nav>
 
       <main className="flex-grow mt-16">
-        <Hero />
+        <Hero ctaLink={ctaLink} />
         <MarketInsights />
         <Features />
         
@@ -37,7 +39,7 @@ const App: React.FC = () => {
               The Crypto Crash Course is free for a limited time. Don't miss the next market cycle.
             </p>
             <a 
-              href="https://cryptolabsresearch.com/cryptocrashcourse"
+              href={ctaLink}
               className="inline-block w-full sm:w-auto px-8 py-4 bg-brand-accent hover:bg-emerald-600 text-white font-bold text-xl rounded-lg shadow-[0_4px_14px_0_rgba(16,185,129,0.39)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.23)] hover:-translate-y-1 transition-all duration-200"
             >
               Get Instant Access Now

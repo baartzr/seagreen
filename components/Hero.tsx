@@ -1,9 +1,11 @@
 import React from 'react';
-import { PlayCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 
-const Hero: React.FC = () => {
-  const ctaLink = "https://cryptolabsresearch.com/cryptocrashcourse";
+interface HeroProps {
+  ctaLink: string;
+}
 
+const Hero: React.FC<HeroProps> = ({ ctaLink }) => {
   return (
     <div className="relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24">
       {/* Background decoration */}
@@ -34,26 +36,15 @@ const Hero: React.FC = () => {
           </p>
         </div>
 
-        {/* VSL Placeholder Container */}
+        {/* VSL Container with YouTube Embed */}
         <div className="relative max-w-4xl mx-auto bg-slate-900 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden aspect-video mb-12 group">
-           {/* Placeholder for Video */}
-           <div className="absolute inset-0 bg-slate-800 flex flex-col items-center justify-center">
-             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-             {/* Abstract Grid Background */}
-             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-             
-             <div className="relative z-10 flex flex-col items-center cursor-pointer hover:scale-105 transition-transform duration-300">
-               <PlayCircle size={80} className="text-brand-accent mb-4 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
-               <p className="text-xl font-bold text-white tracking-wider">WATCH THE STRATEGY REVEAL</p>
-               <p className="text-sm text-slate-400 mt-2">Duration: 12:05</p>
-             </div>
-           </div>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4ypw8yKKYDM?si=7Ig5zMFrHZCGF3Yk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
            
-           {/* Simulating a "Live" badge */}
-           <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1">
-             <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-             IMPORTANT UPDATE
-           </div>
+          {/* Live Badge (Pointer events none so you can click the video underneath) */}
+          <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1 pointer-events-none">
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            IMPORTANT UPDATE
+          </div>
         </div>
 
         {/* Primary CTA */}
