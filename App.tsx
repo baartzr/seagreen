@@ -2,6 +2,8 @@ import React from 'react';
 import Hero from './components/Hero';
 import MarketInsights from './components/MarketInsights';
 import Features from './components/Features';
+import Testimonials from './components/Testimonials';
+import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import { ArrowRight } from 'lucide-react';
 
@@ -28,6 +30,8 @@ const App: React.FC = () => {
 
       <main className="flex-grow mt-16">
         <Hero ctaLink={ctaLink} />
+        <Testimonials />
+        <HowItWorks />
         <MarketInsights />
         <Features />
         
