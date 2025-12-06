@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Custom styles for the body 
+  Note: Font family is applied via Tailwind config, but we can enforce defaults here.
+*/
+@layer base {
+  body {
+    @apply font-sans text-brand-light bg-brand-dark;
+  }
+}
